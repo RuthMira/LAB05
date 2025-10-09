@@ -1,51 +1,52 @@
-# Triângulo
+# 🔺 Exercício 1 - Classificação de Triângulos (TDD com JUnit 5)
 
-## Descrição
-Este projeto implementa uma classe Java para determinar o tipo de triângulo (equilátero, isósceles ou escaleno) com base nos valores dos três lados informados.
+## 🧩 Descrição do Problema
+O programa lê três valores inteiros que representam os lados de um triângulo e informa se ele é:
+- **Equilátero** (todos os lados iguais)
+- **Isósceles** (dois lados iguais)
+- **Escaleno** (todos os lados diferentes)
 
-A lógica considera a regra geométrica:
-> A soma de dois lados deve ser maior que o terceiro lado.
+**Condição de existência:** a soma de dois lados deve ser maior que o terceiro lado.
 
-Inclui também uma suíte de testes automatizados desenvolvidos em **JUnit 5** seguindo princípios de **TDD (Test Driven Development)**.
-
----
-
-## 🧰 Tecnologias
-- Java 17+
-- Maven
-- JUnit 5
-
----
-
-## 🚀 Como executar o projeto
-
-### 1️⃣ Clonar o repositório
-```bash
-git clone https://github.com/usuario/triangulo-tdd.git
-cd triangulo-tdd
+## ⚙️ Estrutura do Projeto
+```
+triangulo-tdd/
+├── pom.xml
+├── README.md
+└── src/
+    ├── main/java/com/example/triangulo/Triangulo.java
+    └── test/java/com/example/triangulo/TrianguloTest.java
 ```
 
-### 2️⃣ Compilar o projeto
+## 🛠️ Requisitos
+- Java 17+
+- Apache Maven 3.8+
+
+Verifique as versões:
+```bash
+java -version
+mvn -version
+```
+
+## 🏗️ Procedimentos de Build
+Compile o projeto e baixe dependências:
 ```bash
 mvn clean compile
 ```
 
-### 3️⃣ Executar os testes
+## 🧪 Execução dos Testes
+Execute todos os testes automatizados:
 ```bash
 mvn test
 ```
 
----
+Saída esperada:
+```
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+BUILD SUCCESS
+```
 
-## 🧪 Casos de teste contemplados
-
-| Tipo de Triângulo | Descrição | Exemplo |
-|-------------------|------------|----------|
-| Equilátero | Três lados iguais | (5,5,5) |
-| Isósceles | Dois lados iguais | (5,5,3), (5,3,5), (3,5,5) |
-| Escaleno | Três lados diferentes | (4,5,6) |
-| Inválido | Um lado zero | (0,5,5) |
-| Inválido | Um lado negativo | (-1,4,5) |
-| Inválido | Soma de dois lados = terceiro | (2,3,5), (3,5,2), (5,2,3) |
-| Inválido | Soma de dois lados < terceiro | (2,3,6), (3,6,2), (6,2,3) |
-| Inválido | Todos os lados iguais a zero | (0,0,0) |
+## 🧠 Abordagem TDD
+1. Criar um teste que falha (Red)  
+2. Implementar o código mínimo para passar (Green)  
+3. Refatorar mantendo os testes passando (Refactor)
